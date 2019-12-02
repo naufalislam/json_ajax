@@ -1,0 +1,22 @@
+<html>
+
+<head>
+    <script>
+        function tes() {
+            json = '{"message": {"pesan": [ {"id": "1", "user": "Nurmi", "text": "Halo apa kabar", "time": "2019-11-13 13:56:05" },{"id": "2", "user": "desrizal", "text": "kabar baik", "time": "2019-11-13 00:00:00" },{"id": "3", "user": "nurmi", "text": "lagi dimana", "time": "2019-11-13 00:00:00" },{"id": "4", "user": "desrizal", "text": "belitung", "time": "2019-11-13 00:00:00" }]}}'
+
+            var teks_div = document.getElementById('divteks');
+            var response = eval("(" +json+")");
+            for(i =0; i< response.message.pesan.length; i++){
+                teks_div.innerHTML += response.message.pesan[i].user;
+                teks_div.innerHTML += '&nbsp;&nbsp;<font size=1>' +
+                response.message.pesan[i].time + '</font><br />';
+                teks_div.innerHTML += response.message.pesan[i].text + '<br />';
+            }
+        }
+    </script>
+</head>
+<body onload=tes()>
+    <div id="divteks"></div>
+</body>
+</html>
